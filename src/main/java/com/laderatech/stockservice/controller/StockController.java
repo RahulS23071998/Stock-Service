@@ -7,10 +7,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -21,6 +21,8 @@ import java.util.List;
         description = "Stock Controller Exposes REST APIs for Stock Service"
 
 )
+@CrossOrigin(origins = "*")
+@Slf4j
 public class StockController {
 
 
@@ -63,6 +65,7 @@ public class StockController {
     )
     @GetMapping
     private ResponseEntity<List<StockVo>> findAllStocks(){
+        log.info("Received a request for data.");
         return new ResponseEntity<>(stockService.findAllStocks(),HttpStatus.OK);
     }
 

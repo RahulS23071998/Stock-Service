@@ -1,14 +1,13 @@
 package com.laderatech.stockservice.mapperImpl;
 
-import com.laderatech.stockservice.mapper.StockMspper;
+import com.laderatech.stockservice.mapper.StockMapper;
 import com.laderatech.stockservice.model.Stock;
 import com.laderatech.stockservice.vo.StockVo;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 @Service
-public class StockMapperImpl implements StockMspper {
+public class StockMapperImpl implements StockMapper {
 
     @Override
     public StockVo mapToStockVo(Stock stock) {
